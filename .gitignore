@@ -1,0 +1,9 @@
+build
+build-d64
+build.eclipse
+build.number
+.metadata
+bin
+contrib/ntservice/dist
+contrib/platform/dist
+
