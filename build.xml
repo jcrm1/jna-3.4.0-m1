@@ -106,6 +106,7 @@
         <os arch="sparcv9"/>
         <os arch="ppc64"/>
         <os arch="ia64"/>
+        <os arch="arm64"/>
       </or>
     </condition>
     <condition property="ld.preload" value="LD_PRELOAD_64" else="LD_PRELOAD">

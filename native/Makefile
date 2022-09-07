@@ -213,9 +213,9 @@ endif
 endif
 
 ifeq ($(OS),darwin)
-JAVA_INCLUDES=-I/System/Library/Frameworks/JavaVM.framework/Headers
+#JAVA_INCLUDES=-I/System/Library/Frameworks/JavaVM.framework/Headers
 DEFAULT_ARCH=$(shell arch)
-ARCH=$(shell arch)
+ARCH=arm64
 HOST_CONFIG=--host $(ARCH)-apple-darwin
 FFI_ENV += CC="$(CC)" CFLAGS="-arch $(ARCH) $(ISYSROOT) $(COPT) $(CDEBUG)" CPPFLAGS="$(CDEFINES)" LD="$(LD) -arch $(ARCH)"
 ALT_ARCHS=
@@ -239,7 +239,7 @@ endif
 
 PCFLAGS+=$(ISYSROOT) -x objective-c
 CDEFINES+=-DTARGET_RT_MAC_CFM=0 -DFFI_MMAP_EXEC_WRIT
-LDFLAGS=$(ARCHFLAGS) -dynamiclib -o $@ -framework JavaVM \
+LDFLAGS=$(ARCHFLAGS) -dynamiclib -o $@ \
   -compatibility_version $(shell echo ${JNA_JNI_VERSION}|sed 's/^\([0-9][0-9]*\).*/\1/g') \
   -current_version $(JNA_JNI_VERSION) \
   -mmacosx-version-min=10.3 \
