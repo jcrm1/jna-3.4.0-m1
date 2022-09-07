@@ -7,3 +7,4 @@ bin
 contrib/ntservice/dist
 contrib/platform/dist
 
+.DS_Store
